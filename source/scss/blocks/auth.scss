@@ -1,0 +1,102 @@
+.auth {
+	flex-basis: 360px;
+	max-width: 360px;
+	min-height: 420px;
+	padding: 40px;
+
+	background-color: rgba(#fff, 0.8);
+}
+
+.auth__logo {
+	margin-top: -95px;
+	margin-bottom: 10px;
+
+	text-align: center;
+}
+
+.auth__logo img {
+	width: 118px;
+	height: auto;
+
+	opacity: 0.8;
+}
+
+.auth__title {
+	margin: 0;
+
+	text-align: center;
+	font-size: 30px;
+	font-weight: 300;
+}
+
+.auth__subtitle {
+	margin: 0;
+	margin-bottom: 37px;
+
+	text-align: center;
+	font-size: 15px;
+	color: #8e918e;
+}
+
+.auth__name {
+	margin-bottom: 20px;
+}
+
+.auth__password {
+	margin-bottom: 25px;
+}
+
+.auth__name,
+.auth__password {
+	display: block;
+	padding: 0 10px;
+	width: 100%;
+	height: 40px;
+}
+
+.auth__rememberme {
+	display: block;
+	margin-bottom: 45px;
+
+	font-size: 13px;
+
+	cursor: pointer;
+}
+
+.auth__rememberme input {
+	display: none;
+}
+
+.auth__rememberme span {
+	position: relative;
+
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	margin-right: 5px;
+
+	background-color: #bbb;
+	border-radius: 3px;
+}
+
+.auth__icon-check {
+	position: absolute;
+
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	display: none;
+	width: 7px;
+	height: 7px;
+
+	fill: #fff;
+}
+
+.auth__rememberme input:checked + span {
+	background-color: #5294fb;
+}
+
+.auth__rememberme input:checked + span .auth__icon-check {
+	display: block;
+}

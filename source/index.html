@@ -11,9 +11,29 @@
 	<div class="visuallyhidden">
 		<include src="build/img/sprite.svg"></include>
 	</div>
-	<svg width="100" height="100">
-		<use xlink:href="#icon-vk"></use>
-	</svg>
+	<main class="page-main">
+		<section class="auth">
+			<div class="auth__logo">
+				<img src="img/logo.png" srcset="img/logo@2x.png 2x" alt="logo">
+			</div>
+			<h2 class="auth__title">QCRM</h2>
+			<p class="auth__subtitle">by SupportYourApp</p>
+			<form class="auth__form">
+				<input class="auth__name" type="text" name="name" placeholder="Login">
+				<input class="auth__password" type="password" name="password" placeholder="Password">
+				<label class="auth__rememberme">
+					<input type="checkbox" name="rememberme">
+					<span>
+						<svg class="auth__icon-check" width="8" height="8">
+							<use xlink:href="#icon-check"></use>
+						</svg>
+					</span>
+					Remember me on this computer
+				</label>
+				<button class="auth__btn btn">Sign In to QCRM</button>
+			</form>
+		</section>
+	</main>
 	<script src="js/main-min.js"></script>
 </body>
 </html>

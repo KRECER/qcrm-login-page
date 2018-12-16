@@ -1,0 +1,17 @@
+.page-main {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+
+	background-image: url('../img/flowers.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+@media (min-resolution: 1.5dppx) {
+	.page-main {
+		background-image: url('../img/flowers@2x.jpg');
+	}
+}

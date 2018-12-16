@@ -78,13 +78,13 @@ gulp.task('style', () => {
 
 gulp.task('sprite', () => {
 	return gulp.src('source/img/**/*.svg')
-		.pipe(svgstore({ inlineSvg: true }))
 		.pipe(cheerio({
-				run: function ($) {
-						$('svg').attr('style',  'display:none');
-				},
-				parserOptions: { xmlMode: true }
+			run: function ($) {
+					$('[fill]').removeAttr('fill');
+			},
+			parserOptions: { xmlMode: true }
 		}))
+		.pipe(svgstore({ inlineSvg: true }))
 		.pipe( rename('sprite.svg') )
 		.pipe( gulp.dest('build/img') )
 });
