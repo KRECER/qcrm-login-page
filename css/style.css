@@ -366,16 +366,23 @@ body {
   font-family: "HelveticaNeue", Arial, sans-serif; }
 
 .auth {
+  z-index: 2;
   flex-basis: 360px;
   max-width: 360px;
   min-height: 420px;
   padding: 40px;
-  background-color: rgba(255, 255, 255, 0.8); }
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-transform: perspective(1000px);
+          transform: perspective(1000px);
+  -webkit-animation: rotateAuth 0.7s ease-in-out;
+          animation: rotateAuth 0.7s ease-in-out;
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.5); }
 
 .auth__logo {
   margin-top: -95px;
   margin-bottom: 10px;
-  text-align: center; }
+  margin-left: auto;
+  margin-right: auto; }
 
 .auth__logo img {
   width: 118px;
@@ -443,14 +450,114 @@ body {
 .auth__rememberme input:checked + span .auth__icon-check {
   display: block; }
 
+@-webkit-keyframes rotateAuth {
+  0% {
+    -webkit-transform: perspective(500px) rotateX(-60deg);
+            transform: perspective(500px) rotateX(-60deg);
+    opacity: 0; }
+  70% {
+    -webkit-transform: perspective(500px) rotateX(5deg);
+            transform: perspective(500px) rotateX(5deg); }
+  100% {
+    -webkit-transform: perspective(500px) rotateX(0deg);
+            transform: perspective(500px) rotateX(0deg);
+    opacity: 1; } }
+
+@keyframes rotateAuth {
+  0% {
+    -webkit-transform: perspective(500px) rotateX(-60deg);
+            transform: perspective(500px) rotateX(-60deg);
+    opacity: 0; }
+  70% {
+    -webkit-transform: perspective(500px) rotateX(5deg);
+            transform: perspective(500px) rotateX(5deg); }
+  100% {
+    -webkit-transform: perspective(500px) rotateX(0deg);
+            transform: perspective(500px) rotateX(0deg);
+    opacity: 1; } }
+
 .btn {
   width: 100%;
   padding: 15px 0;
   color: #ffffff;
   background-color: #3E9FFD;
-  border: none; }
+  border: none;
+  transition: background-color 0.2s; }
 
-.page-main {
+.btn:hover {
+  background-color: #2090fd; }
+
+.logo {
+  position: relative;
+  width: 118px;
+  height: 118px;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-animation: rotateLogo 0.5s ease-in;
+          animation: rotateLogo 0.5s ease-in;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  -webkit-transform: perspective(500px);
+          transform: perspective(500px);
+  -webkit-perspective: 500px;
+          perspective: 500px; }
+
+.logo__square {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 5px; }
+  .logo__square--orange {
+    top: 18px;
+    left: 34px;
+    background-color: #eb8109;
+    -webkit-animation: rotateOrange 0.8s ease-in;
+            animation: rotateOrange 0.8s ease-in;
+    transition: all 1s; }
+  .logo__square--violet {
+    top: 35px;
+    left: 50px;
+    z-index: 1;
+    background-color: #cf366f;
+    opacity: 0.8; }
+  .logo__square--blue {
+    top: 50px;
+    left: 34px;
+    background-color: #2492fb;
+    -webkit-animation: rotateBlue 0.7s ease-in;
+            animation: rotateBlue 0.7s ease-in; }
+  .logo__square--green {
+    top: 67px;
+    left: 50px;
+    background-color: #52c04d;
+    opacity: 0.8; }
+
+@-webkit-keyframes rotateLogo {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(70deg) scaleX(2);
+            transform: perspective(400px) rotateX(70deg) scaleX(2);
+    opacity: 0; }
+  100% {
+    -webkit-transform: perspective(400px) rotateX(0deg) scaleX(1);
+            transform: perspective(400px) rotateX(0deg) scaleX(1);
+    opacity: 1; } }
+
+@keyframes rotateLogo {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(70deg) scaleX(2);
+            transform: perspective(400px) rotateX(70deg) scaleX(2);
+    opacity: 0; }
+  100% {
+    -webkit-transform: perspective(400px) rotateX(0deg) scaleX(1);
+            transform: perspective(400px) rotateX(0deg) scaleX(1);
+    opacity: 1; } }
+
+@-webkit-keyframes rotateOrange {}
+
+@keyframes rotateOrange {}@-webkit-keyframes rotateBlue {}@keyframes rotateBlue {}.page-main {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -459,10 +566,38 @@ body {
   background-image: url("../img/flowers.jpg");
   background-size: cover;
   background-repeat: no-repeat; }
+  .page-main::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    background-color: #E2E0E2;
+    -webkit-animation: fadeInBg 1.5s ease-in;
+            animation: fadeInBg 1.5s ease-in;
+    opacity: 0; }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
   .page-main {
     background-image: url("../img/flowers@2x.jpg"); } }
+
+@-webkit-keyframes fadeInBg {
+  0% {
+    opacity: 1; }
+  80% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes fadeInBg {
+  0% {
+    opacity: 1; }
+  80% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 
 .visuallyhidden {
   position: absolute !important;
