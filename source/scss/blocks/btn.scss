@@ -6,4 +6,9 @@
 
 	background-color: #3E9FFD;
 	border: none;
+	transition: background-color 0.2s;
+}
+
+.btn:hover {
+	background-color: darken(#3E9FFD, 6%);
 }

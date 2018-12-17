@@ -1,0 +1,80 @@
+.logo {
+	position: relative;
+
+	width: 118px;
+	height: 118px;
+
+	border-radius: 25px;
+	background-color: rgba(#ffffff, 0.8);
+	animation: rotateLogo 0.5s ease-in;
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+	transform: perspective(500px);
+	perspective: 500px;
+}
+
+.logo__square {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	display: block;
+	width: 32px;
+	height: 32px;
+
+	border-radius: 5px;
+
+	&--orange {
+		top: 18px;
+		left: 34px;
+
+		background-color: darken(#F79525, 8%);
+		animation: rotateOrange 0.8s ease-in;
+		transition: all 1s;
+	}
+
+	&--violet {
+		top: 35px;
+		left: 50px;
+		z-index: 1;
+
+		background-color: darken(#D75787, 8%);
+		opacity: 0.8;
+	}
+
+	&--blue {
+		top: 50px;
+		left: 34px;
+
+		background-color: darken(#4CA6FC, 8%);
+		animation: rotateBlue 0.7s ease-in;
+	}
+
+	&--green {
+		top: 67px;
+		left: 50px;
+
+		background-color: darken(#6FCB6B, 8%);
+		opacity: 0.8;
+	}
+}
+
+@keyframes rotateLogo {
+	0% {
+		transform: perspective(400px) rotateX(70deg) scaleX(2);
+		opacity: 0;
+		
+	}
+
+	100% {
+		transform: perspective(400px) rotateX(0deg) scaleX(1);
+		opacity: 1;
+	}
+}
+
+@keyframes rotateOrange {
+
+}
+
+@keyframes rotateBlue {
+
+}

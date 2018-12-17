@@ -1,4 +1,5 @@
 .page-main {
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -8,10 +9,39 @@
 	background-image: url('../img/flowers.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
+
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		z-index: 1;
+
+		width: 100vw;
+		height: 100vh;
+
+		background-color: #E2E0E2;
+		animation: fadeInBg 1.5s ease-in;
+		opacity: 0;
+	}
 }
 
 @media (min-resolution: 1.5dppx) {
 	.page-main {
 		background-image: url('../img/flowers@2x.jpg');
+	}
+}
+
+@keyframes fadeInBg {
+	0% {
+		opacity: 1;
+	}
+
+	80% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
 	}
 }
